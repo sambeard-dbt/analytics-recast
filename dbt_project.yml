@@ -1,0 +1,40 @@
+name: 'analytics_recast_dbt'
+version: '1.0.0'
+config-version: 2
+
+dbt-cloud:
+  project-id: 439429
+
+profile: 'analytics_recast_dbt'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  analytics_recast_dbt:  # TODO: UPDATE SECTION HERE
+    +persist_docs:
+      relation: true
+      columns: true
+    mmm_data:
+      +materialized: table
+
+      +schema: mmm_data
+seeds:
+  analytics_recast_dbt:
+    +schema: raw_data
+    +delimiter: ","
+    mmm_data:
+      +schema: mmm_data
+    +column_types:
+      zip_code: varchar(10)
+
+
+flags:
+  require_generic_test_arguments_property: true

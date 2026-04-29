@@ -1,0 +1,1 @@
+select * from {{ source('sigma', 'marketing_cac_spend') }}
