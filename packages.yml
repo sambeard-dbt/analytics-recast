@@ -1,0 +1,5 @@
+packages:
+  # WHOOP internal package: Provides macros for PII tagging and Snowflake-specific utilities
+  # Used in on-run-end to apply PII tags from model metadata to table columns
+  - git: "https://github.com/sambeard-dbt/snowflake-dbt.git"
+    warn-unpinned: false
