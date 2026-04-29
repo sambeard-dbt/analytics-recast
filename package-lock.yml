@@ -1,0 +1,5 @@
+packages:
+  - git: https://github.com/sambeard-dbt/snowflake-dbt.git
+    name: snowflake_dbt
+    revision: c5ca7c143bc02c301a9298eaab8d68eb825e3a13
+sha1_hash: 51fffc683481cf822ba5331cf139d2ebd98eb85d
